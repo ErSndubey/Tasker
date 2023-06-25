@@ -154,7 +154,7 @@ function renderTasksFromStorage() {
 
 renderTasksFromStorage();
 
-// sign in with google 
+// sign in with google
 function signInWithGoogle() {
     gapi.auth2.getAuthInstance().signIn().then(function (googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -162,3 +162,15 @@ function signInWithGoogle() {
         document.getElementById("profileImage").src = profileImage;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    gapi.load('auth2', function () {
+        gapi.auth2.init({
+            client_id: '169923523948-q3244k1tpp2jun2qj52tvsqo8htntg4q.apps.googleusercontent.com',
+            scope: 'profile'
+        }).then(function (auth2) {
+            var signInButton = document.getElementById('profileImage');
+            signInButton.addEventListener('click', signInWithGoogle);
+        });
+    });
+});
