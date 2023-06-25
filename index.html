@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+   
+
+    <title>My To-Do List</title>
+  </head>
+  <body>
+    <!-- navigation bar starts  -->
+    <nav class="navbar navbar-light bg-dark navbar-fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="icon.png"
+            alt=""
+            width="60"
+            height="60"
+            class="d-inline-block align-text-top"
+          />
+          <span class="h1 d-inline-block align-text-top mt-2" style="color: white"
+            >Tasker</span
+          >
+        </a>
+
+  <!-- Profile drop down button button -->
+  <div class="btn-group end ms-2">
+    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img src="user.jpg" width="40" height="40" class="rounded-circle">
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+
+        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+    </ul>
+</div>
+      </div>
+    </nav>
+    <!-- navigation bar ends  -->
+
+    <!-- Add atsk starts  -->
+    <div
+      class="container mt-4 border rounded-3"
+      style="background-color: rgb(241, 242, 243)"
+    >
+      <form id="addTaskForm">
+        <div class="mb-3">
+          <label for="exampleInputTitle" class="form-label">Task Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputTitle"
+            aria-describedby="TitleHelp"
+          />
+          <div id="TitleHelp" class="form-text">
+            Assign a title to your task.
+          </div>
+        </div>
+        <div class="mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 150px"
+          ></textarea>
+          
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Assign top priority</label
+          >
+        </div>
+        <button
+          type="submit"
+          class="btn mb-3 bg-success"
+         
+        >
+          <span  style="color: aliceblue;">Submit</span>
+        </button>
+      </form>
+      <!-- Add task ends -->
+    </div>
+
+    <!-- Task list stsrts -->
+    <div class="mt-4 container-xl">
+      <h2 class="mb-4 " style="color: rgb(61, 61, 61); text-decoration: underline;">Your exsisting tasks :-</h2>
+      <ol id="taskList">
+
+      </ol>
+
+        
+    </div>
+    <!-- Task list ends -->
+   <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body border border-success">
+        <p id="taskDescription"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+    <!-- Bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
