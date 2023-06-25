@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- navigation bar starts  -->
-    <nav class="navbar navbar-light bg-dark navbar-fixed-top">
+    <nav class="navbar navbar-light bg-success navbar-fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
@@ -35,15 +35,15 @@
 
   <!-- Profile drop down button button -->
   <div class="btn-group end ms-2">
-    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
         aria-expanded="false">
-        <img src="user.jpg" width="40" height="40" class="rounded-circle">
+        <img id="profileImage" width="40" height="40" class="rounded-circle">
     </button>
     <ul class="dropdown-menu dropdown-menu-end">
-
         <li><a class="dropdown-item" href="#">Sign Out</a></li>
     </ul>
 </div>
+
       </div>
     </nav>
     <!-- navigation bar ends  -->
@@ -123,6 +123,14 @@
   </div>
 </div>
 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id: '169923523948-q3244k1tpp2jun2qj52tvsqo8htntg4q.apps.googleusercontent.com'
+        });
+    });
+</script>
 
 <script src="script.js"></script>
     <!-- Bootstrap js -->
