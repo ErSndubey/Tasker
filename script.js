@@ -153,3 +153,12 @@ function renderTasksFromStorage() {
 }
 
 renderTasksFromStorage();
+
+// sign in with google 
+function signInWithGoogle() {
+    gapi.auth2.getAuthInstance().signIn().then(function (googleUser) {
+        var profile = googleUser.getBasicProfile();
+        var profileImage = profile.getImageUrl();
+        document.getElementById("profileImage").src = profileImage;
+    });
+}
